@@ -228,10 +228,10 @@ RoutingExperiment::Run (int nSinks, double txp, std::string CSVfileName)
 
   int nWifis = 50;
 
-  double TotalTime = 200.0;
+  double TotalTime = 70.0;
   std::string rate ("2048bps");
   std::string phyMode ("DsssRate11Mbps");
-  std::string tr_name ("manet-routing-compare");
+  std::string tr_name ("iitp-trace");
   int nodeSpeed = 20; //in m/s
   int nodePause = 0; //in s
   m_protocolName = "protocol";
@@ -378,8 +378,8 @@ RoutingExperiment::Run (int nSinks, double txp, std::string CSVfileName)
   //Ptr<OutputStreamWrapper> osw = ascii.CreateFileStream ( (tr_name + ".tr").c_str());
   //wifiPhy.EnableAsciiAll (osw);
   AsciiTraceHelper ascii;
-  MobilityHelper::EnableAsciiAll (ascii.CreateFileStream (tr_name + ".mob"));
-
+  MobilityHelper::EnableAsciiAll (ascii.CreateFileStream (tr_name + ".tr"));
+wifiPhy.EnableAsciiAll(ascii.CreateFileStream("manet.tr"));
   //Ptr<FlowMonitor> flowmon;
   //FlowMonitorHelper flowmonHelper;
   //flowmon = flowmonHelper.InstallAll ();
